@@ -8,12 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var nameSchet:UILabel!
+    @IBOutlet var nameButton:UIButton!
+    var a = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        nameSchet.text = "Значение счётчика: 0"
+        nameButton.addTarget(self, action: #selector(touchButton), for: .touchUpInside)
     }
-
+    @objc func touchButton() {
+        a += 1
+        nameSchet.text = "Значение счётчика: \(a)"
+    }
 
 }
 
